@@ -1,0 +1,22 @@
+{
+    "targets": [
+        "C:\\Windows\\System32",
+        "C:\\Program Files"
+    ],
+    "recursive": true,
+    "extensions": [
+        ".exe",
+        ".dll",
+        ".sys",
+        ".ps1"
+    ],
+    "allow_publishers_contains": [
+        "Microsoft",
+        "Google",
+        "Mozilla"
+    ],
+    "fail_on_unsigned": true,
+    "max_files": 0,
+    "sig_batch_size": 200,
+    "ps_timeout": 300
+}

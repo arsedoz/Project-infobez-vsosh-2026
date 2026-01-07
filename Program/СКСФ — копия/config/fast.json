@@ -1,0 +1,10 @@
+{
+    "targets": ["C:\\Windows\\System32"],
+    "recursive": true,
+    "extensions": [".exe", ".dll"],
+    "allow_publishers_contains": ["Microsoft", "Windows", "Oracle"],
+    "fail_on_unsigned": true,
+    "max_files": 0,
+    "sig_batch_size": 100,
+    "ps_timeout": 300
+}
