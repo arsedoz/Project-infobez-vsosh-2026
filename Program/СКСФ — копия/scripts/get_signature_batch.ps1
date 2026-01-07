@@ -10,7 +10,6 @@ Get-Content -LiteralPath $InputFile -Encoding UTF8 | ForEach-Object {
         
         if (Test-Path -LiteralPath $path) {
             try {
-                # 1. Сначала пробуем встроенную подпись
                 $sig = Get-AuthenticodeSignature -LiteralPath $path -ErrorAction SilentlyContinue
                 
                 $finalStatus = "Unknown"
@@ -27,7 +26,6 @@ Get-Content -LiteralPath $InputFile -Encoding UTF8 | ForEach-Object {
                     }
                 }
 
-                # 2. ЕСЛИ НЕ ПОДПИСАНО -> Ищем в Каталогах (AppLocker)
                 if ($finalStatus -ne "Valid") {
                     try {
                         $appLocker = Get-AppLockerFileInformation -Path $path -EventType Auditing -ErrorAction SilentlyContinue
